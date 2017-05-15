@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style>
+    body {
+      margin-top: 15%;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">GST Calculator</div>
+    <div class="panel-body">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon" id="totalAmount">$</span>
+        <input type="number"
+               class="form-control"
+               id="totalAmount"
+               ng-model="inputVal"
+               placeholder="Total receipt amount">
+      </div>
+    </div>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        GST Exclusive Amount
+        <span class="pull-right">$ {{inputVal? (inputVal/1.1 | number: 2) : 0}}</span>
+      </li>
+      <li class="list-group-item">
+        GST Amount
+        <span class="pull-right">$ {{inputVal? (inputVal/11 | number: 2) : 0}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</body>
+</html>
